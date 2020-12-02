@@ -1,8 +1,15 @@
 
-def valid(low, high, letter, password)
+def validA(low, high, letter, password)
   count = password.count(letter)
   
   count >= low && count <= high
+end
+
+def validB(first, second, letter, password)
+  firstChar = password[first - 1]
+  secondChar = password[second - 1]
+
+  (firstChar == letter) ^ (secondChar == letter)
 end
 
 def main
@@ -20,7 +27,7 @@ def main
     
     pass = row[2]
 
-    count += 1 if valid(low, high, letter, pass)
+    count += 1 if validB(low, high, letter, pass)
 
   end
 
