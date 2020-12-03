@@ -15,7 +15,7 @@ end
 def main
   count = 0
 
-  text = File.readlines("two.txt").each do |line|
+  File.readlines("two.txt").each do |line|
     
     row = line.split(" ")
 
